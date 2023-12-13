@@ -25,90 +25,22 @@ export default function SectionHeader() {
     <div className="section-header">
       {modalOpen && <Modal />}
 
-      {isAuth && (
-        <div className="buttons">
-          <button
-            onClick={() => {
-              fetch("https://qr-menu.premierlounge.uz/api/call?type=waiter", {
-                method: "POST",
-                headers: {
-                  Accept: "application/json",
-                  uuid: sessionStorage.getItem("client"),
-                },
-                params: {
-                  type: "waiter",
-                },
-              });
-              setModalOpen(true);
-              setTimeout(() => {
-                setModalOpen(false);
-              }, 3000);
-            }}
-          >
-            {" "}
-            <img src={off} alt="" />{" "}
-            {localStorage.getItem("lang") == "ru"
-              ? "Официант"
-              : localStorage.getItem("lang") == "uz"
-              ? "Ofisiant"
-              : localStorage.getItem("lang") == "qr"
-              ? "Oficiant"
-              : localStorage.getItem("lang") == "en" && "Waiter"}
-          </button>
-          <button
-            onClick={() => {
-              fetch("https://qr-menu.premierlounge.uz/api/call?type=bill", {
-                method: "POST",
-                headers: {
-                  Accept: "application/json",
-                  uuid: sessionStorage.getItem("client"),
-                },
-                params: {
-                  type: "bill",
-                },
-              });
-              setModalOpen(true);
-              setTimeout(() => {
-                setModalOpen(false);
-              }, 3000);
-            }}
-          >
-            {" "}
-            <img src={check} alt="" />{" "}
-            {localStorage.getItem("lang") == "ru"
-              ? "Счет"
-              : localStorage.getItem("lang") == "uz"
-              ? "Hisob"
-              : localStorage.getItem("lang") == "qr"
-              ? "Esap"
-              : localStorage.getItem("lang") == "en" && "Bill"}
-          </button>
-        </div>
-      )}
       <div className="infos">
-        <div className="infos-top">
-          <span>
-            <img src={wifi} alt="" />
-            Wifi : 123456
-          </span>
-          <span>
-            <img src={phone} alt="" />
-            <a href="tel:+998973587007">+998973587007</a>
-          </span>
+        <div>
+          <div className="infos-top">
+            <span>
+              <img src={phone} alt="" />
+              <a href="tel:+998973587007">+998 97 358 70 07</a>
+            </span>
+          </div>
+          <div className="infos-btm">
+            <span>
+              <img src={map} alt="" />
+              Нукус, улица <br /> А.Досназаров 319/1
+            </span>
+          </div>  
         </div>
-        <div className="infos-btm">
-          <span>
-            <img src={map} alt="" />
-            {localStorage.getItem("lang") == "ru"
-              ? "г.Нукус  Жолмурза Аймурзаев б/н, MixMarket"
-              : localStorage.getItem("lang") == "uz"
-              ? "Nukus, Jolmurza Aymurzaev r/u , MixMarket"
-              : localStorage.getItem("lang") == "qr"
-              ? "Nókis, Jolmurza Aymurzaev n/ú, MixMarket "
-              : localStorage.getItem("lang") == "en" &&
-                "Nukus, Jolmurza Aymurzaev street , MixMartket"}
-          </span>
-        </div>
+        <button className="btn">Оставить отзыв</button>
       </div>
     </div>
   );

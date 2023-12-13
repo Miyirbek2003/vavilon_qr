@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
 *,
 *::after,
@@ -75,11 +75,12 @@ section .container {
   right: 25px;
   bottom: 85px;
 }
+
 .scrollTop button {
   padding: 13px;
   color: white;
   font-weight: 600;
-  background-color: #8039FD;
+  background-color: rgba(243, 10, 6, 1);
   border: none;
   border-radius: 9px;
   font-size: 25px;

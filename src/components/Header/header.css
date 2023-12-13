@@ -7,7 +7,7 @@
     display: flex;
     align-items: baseline;
     position: relative;
-    height: 200px;
+    height: 170px;
 }
 
 .homeP {
@@ -73,7 +73,19 @@
 }
 .logo{
     position: absolute;
-    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 200px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    max-width: 100%;
+    height: 100%;
 }
 .lang .drop {
     position: absolute;
