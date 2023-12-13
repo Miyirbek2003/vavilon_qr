@@ -7,11 +7,22 @@ export default function Loader() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        flexDirection:'column'
+        flexDirection: "column",
       }}
     >
       <img src={pre_logo} alt="" />
-      <h3 style={{fontWeight:'500', fontSize:'35px', letterSpacing:'1.5px'}}>Vavilon</h3>
+      <h3
+        style={{
+          fontWeight: "500",
+          position: "relative",
+          fontSize: "35px",
+          letterSpacing: "1.5px",
+        }}
+      >
+        <div class="sign">
+          <span class="fast-flicker">V</span>avi<span class="flicker">l</span>on
+        </div>
+      </h3>
     </section>
   );
 }

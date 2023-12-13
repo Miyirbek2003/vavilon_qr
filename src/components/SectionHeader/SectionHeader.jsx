@@ -9,11 +9,13 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "../Modal/Modal";
 import React from "react";
+import ModalFeed from "../Modal/ModalFeed";
 export default function SectionHeader() {
   const { isAuth, lang } = useSelector((state) => state.productsSlice);
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = React.useState(false);
-  if (modalOpen) {
+  const [feedModalOpen, setFeedModalOpen] = React.useState(false);
+  if (modalOpen || feedModalOpen) {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "auto";
@@ -24,6 +26,7 @@ export default function SectionHeader() {
   return (
     <div className="section-header">
       {modalOpen && <Modal />}
+      {feedModalOpen && <ModalFeed setFeedModalOpen={setFeedModalOpen} />}
 
       <div className="infos">
         <div>
@@ -38,9 +41,11 @@ export default function SectionHeader() {
               <img src={map} alt="" />
               Нукус, улица <br /> А.Досназаров 319/1
             </span>
-          </div>  
+          </div>
         </div>
-        <button className="btn">Оставить отзыв</button>
+        <button className="btn" onClick={() => setFeedModalOpen(true)}>
+          Оставить отзыв
+        </button>
       </div>
     </div>
   );

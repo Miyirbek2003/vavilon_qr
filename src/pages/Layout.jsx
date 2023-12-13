@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import Loader from "../components/Loader/Loader";
 import Modal from "../components/Modal/Modal";
 export default function Layout() {
-  if (true) {
+  if (false) {
     return <Loader />;
   }
   return (
