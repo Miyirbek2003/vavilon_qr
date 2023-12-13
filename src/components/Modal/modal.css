@@ -52,7 +52,7 @@
     position: relative;
 }
 
-.drop-down:hover>ul {
+.drop-down:hover>ul.active {
     position: absolute;
     display: block;
     background-color: rgba(42, 41, 41, 1);
@@ -68,7 +68,8 @@
 .drop-down ul li {
     padding: 10px;
 }
-.drop-down ul li:hover{
+
+.drop-down ul li:hover {
     background-color: rgba(90, 90, 90, 0.5);
     border-radius: 8px;
 }
@@ -104,7 +105,8 @@
     height: 100%;
     border-radius: 12px;
 }
-.exit{
+
+.exit {
     position: absolute;
     font-size: 35px;
     font-weight: 500;
@@ -113,6 +115,7 @@
     color: white;
     cursor: pointer;
 }
+
 .form-item textarea {
     width: 100%;
     height: 100%;
@@ -121,7 +124,8 @@
     padding: 10px;
     color: white;
     resize: none;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
 }
 
 .modal-inner h3 {

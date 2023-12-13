@@ -22,7 +22,14 @@ export default function ModalFeed({ setFeedModalOpen }) {
                     1. Было ли приветствие официанта и познакомил ли он/она
                     себя?
                   </p>
-                  <div className="drop-down">
+                  <div
+                    className="drop-down"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      let dr1 = document.querySelector(".dr1");
+                      dr1.classList.add("active");
+                    }}
+                  >
                     {selected1 ? (
                       <div className="select-btn">
                         <span>{selected1}</span>
@@ -34,16 +41,37 @@ export default function ModalFeed({ setFeedModalOpen }) {
                         <VscTriangleDown />
                       </div>
                     )}
-                    <ul>
-                      <li onClick={(e) => setSelected1(e.target.innerHTML)}>
+                    <ul className="dr1">
+                      <li
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelected1(e.target.innerHTML);
+                          let dr1 = document.querySelector(".dr1");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Да
                       </li>
 
-                      <li onClick={(e) => setSelected1(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelected1(e.target.innerHTML);
+                          let dr1 = document.querySelector(".dr1");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Нет
                       </li>
 
-                      <li onClick={(e) => setSelected1(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelected1(e.target.innerHTML);
+                          let dr1 = document.querySelector(".dr1");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Не знаю
                       </li>
                     </ul>
@@ -56,7 +84,13 @@ export default function ModalFeed({ setFeedModalOpen }) {
                     1. Было ли приветствие официанта и познакомил ли он/она
                     себя?
                   </p>
-                  <div className="drop-down">
+                  <div
+                    className="drop-down"
+                    onClick={() => {
+                      let dr1 = document.querySelector(".dr2");
+                      dr1.classList.add("active");
+                    }}
+                  >
                     {selected2 ? (
                       <div className="select-btn">
                         <span>{selected2}</span>
@@ -68,16 +102,38 @@ export default function ModalFeed({ setFeedModalOpen }) {
                         <VscTriangleDown />
                       </div>
                     )}
-                    <ul>
-                      <li onClick={(e) => setSelected2(e.target.innerHTML)}>
+                    <ul className="dr2">
+                      <li
+                        onClick={(e) => {
+                          setSelected2(e.target.innerHTML);
+                          e.stopPropagation();
+
+                          let dr1 = document.querySelector(".dr2");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Да
                       </li>
 
-                      <li onClick={(e) => setSelected2(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          setSelected2(e.target.innerHTML);
+                          e.stopPropagation();
+                          let dr1 = document.querySelector(".dr2");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Нет
                       </li>
 
-                      <li onClick={(e) => setSelected2(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          setSelected2(e.target.innerHTML);
+                          let dr1 = document.querySelector(".dr2");
+                          e.stopPropagation();
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Не знаю
                       </li>
                     </ul>
@@ -90,7 +146,14 @@ export default function ModalFeed({ setFeedModalOpen }) {
                     1. Было ли приветствие официанта и познакомил ли он/она
                     себя?
                   </p>
-                  <div className="drop-down">
+                  <div
+                    className="drop-down"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      let dr1 = document.querySelector(".dr3");
+                      dr1.classList.add("active");
+                    }}
+                  >
                     {selected3 ? (
                       <div className="select-btn">
                         <span>{selected3}</span>
@@ -102,16 +165,37 @@ export default function ModalFeed({ setFeedModalOpen }) {
                         <VscTriangleDown />
                       </div>
                     )}
-                    <ul>
-                      <li onClick={(e) => setSelected3(e.target.innerHTML)}>
+                    <ul className="dr3">
+                      <li
+                        onClick={(e) => {
+                          setSelected3(e.target.innerHTML);
+                          e.stopPropagation();
+                          let dr1 = document.querySelector(".dr3");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Да
                       </li>
 
-                      <li onClick={(e) => setSelected3(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          setSelected3(e.target.innerHTML);
+                          e.stopPropagation();
+                          let dr1 = document.querySelector(".dr3");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Нет
                       </li>
 
-                      <li onClick={(e) => setSelected3(e.target.innerHTML)}>
+                      <li
+                        onClick={(e) => {
+                          setSelected3(e.target.innerHTML);
+                          e.stopPropagation();
+                          let dr1 = document.querySelector(".dr3");
+                          dr1.classList.remove("active");
+                        }}
+                      >
                         Не знаю
                       </li>
                     </ul>
@@ -124,7 +208,12 @@ export default function ModalFeed({ setFeedModalOpen }) {
                     1. Было ли приветствие официанта и познакомил ли он/она
                     себя?
                   </p>
-                  <textarea name="comment" id="coment" rows={4}></textarea>
+                  <textarea
+                    name="comment"
+                    placeholder="Объяснение"
+                    id="coment"
+                    rows={4}
+                  ></textarea>
                 </div>
               </div>
 
