@@ -8,6 +8,11 @@ export default function Loader() {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        background: "#2B2B2A",
       }}
     >
       <img src={pre_logo} alt="" />
@@ -19,8 +24,9 @@ export default function Loader() {
           letterSpacing: "1.5px",
         }}
       >
-        <div class="sign">
-          <span class="fast-flicker">V</span>avi<span class="flicker">l</span>on
+        <div className="sign">
+          <span className="fast-flicker">V</span>avi
+          <span className="flicker">l</span>on
         </div>
       </h3>
     </section>

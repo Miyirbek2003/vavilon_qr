@@ -18,7 +18,7 @@ export const getCategory = createAsyncThunk('productsSlice/getCategory', async (
     const response = await axios.get('https://qr-menu.premierlounge.uz/api/categories', {
         headers: {
             'Accept': 'application/json',
-            'Accept-Language': `${localStorage.getItem('lang')}`
+            'Accept-Language': 'ru'
         }
     })
     dispatch(setCategory(response.data.data))

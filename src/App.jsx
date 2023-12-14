@@ -20,13 +20,10 @@ export default function App() {
   }
   React.useEffect(() => {
     dispatch(checkAuth());
-    // dispatch(getCategory());
+    
     navigate("/");
   }, []);
-  const { loading } = useSelector((state) => state.productsSlice);
-  // if (loading) {
-  //   return <Loader />;
-  // }
+  
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
