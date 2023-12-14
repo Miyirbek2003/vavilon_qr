@@ -21,7 +21,7 @@ export default function Category() {
   }, []);
   const navigate = useNavigate();
   return (
-    <section>
+    <section className="cat-sc">
       <div className="container">
         <SectionHeader />
         <CategoryB products={products} />

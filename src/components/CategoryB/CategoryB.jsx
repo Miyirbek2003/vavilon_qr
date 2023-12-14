@@ -6,7 +6,7 @@ export default function CategoryB({ products }) {
   const { type } = useParams();
   const lang = localStorage.getItem("lang");
   const { category } = useSelector((state) => state.productsSlice);
-  console.log(products);
+  
   return (
     <div className="categoryb">
       <h2 style={{marginBottom: '20px'}}>

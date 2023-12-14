@@ -2,7 +2,7 @@ import React from "react";
 import "./modal.css";
 import { VscTriangleDown } from "react-icons/vsc";
 
-export default function ModalFeed({ setFeedModalOpen }) {
+export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
   const [selected1, setSelected1] = React.useState("");
   const [selected2, setSelected2] = React.useState("");
   const [selected3, setSelected3] = React.useState("");
@@ -217,7 +217,17 @@ export default function ModalFeed({ setFeedModalOpen }) {
                 </div>
               </div>
 
-              <button className="btn">Отправить</button>
+              <button
+                className="btn"
+                onClick={() => {
+                  setFeedModalOpen(false), setModalOpen(true);
+                  setTimeout(() => {
+                    setModalOpen(false);
+                  }, 2000);
+                }}
+              >
+                Отправить
+              </button>
             </div>
           </div>
         </div>

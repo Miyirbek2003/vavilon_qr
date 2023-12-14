@@ -4,8 +4,10 @@ import Category from "./pages/Category/Category";
 import Home from "./pages/Home/Home";
 import Layout from "./pages/Layout";
 import Order from "./pages/Order/Order";
-import { useDispatch } from "react-redux";
-import { checkAuth } from "./store/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuth, getCategory } from "./store/productsSlice";
+import Loader from "./components/Loader/Loader";
+
 export default function App() {
   const navigate = useNavigate();
   const client = window.location.href;
@@ -18,8 +20,13 @@ export default function App() {
   }
   React.useEffect(() => {
     dispatch(checkAuth());
+    // dispatch(getCategory());
     navigate("/");
   }, []);
+  const { loading } = useSelector((state) => state.productsSlice);
+  // if (loading) {
+  //   return <Loader />;
+  // }
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

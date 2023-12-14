@@ -57,7 +57,8 @@ const initialState = {
     products: [],
     product: [],
     lang: localStorage.getItem('lang') ? localStorage.getItem('lang') : localStorage.setItem('lang', 'ru'),
-    isAuth: ''
+    isAuth: '',
+    loading: false
 }
 
 
@@ -81,6 +82,18 @@ const productsSlice = createSlice({
             localStorage.setItem('lang', payload)
             state.lang = localStorage.getItem('lang')
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getCategory.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(getCategory.fulfilled, (state, action) => {
+                state.loading = false
+            })
+            .addCase(getCategory.rejected, (state, action) => {
+                state.loading = false;
+            })
     }
 })
 

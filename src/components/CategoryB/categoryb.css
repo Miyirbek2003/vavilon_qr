@@ -23,14 +23,14 @@
 
 .price {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 20px;
     line-height: 30px;
-    color: #8039FD;
+    color: white;
     white-space: nowrap;
 }
 
 .price span {
-    font-size: 13px;
+    font-size: 20px;
 }
 
 .category-text {
@@ -47,9 +47,9 @@
 
 .category-title h2 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .category-title p {
@@ -65,10 +65,10 @@
 }
 
 .category-item .img {
-    height: 270px;
+    height: 150px;
     overflow: hidden;
     position: relative;
-    border-radius: 7px;
+    border-radius: 20px;
     margin-bottom: 7px;
     display: flex;
     align-items: center;

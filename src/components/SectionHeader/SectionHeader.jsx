@@ -26,7 +26,12 @@ export default function SectionHeader() {
   return (
     <div className="section-header">
       {modalOpen && <Modal />}
-      {feedModalOpen && <ModalFeed setFeedModalOpen={setFeedModalOpen} />}
+      {feedModalOpen && (
+        <ModalFeed
+          setModalOpen={setModalOpen}
+          setFeedModalOpen={setFeedModalOpen}
+        />
+      )}
 
       <div className="infos">
         <div>
