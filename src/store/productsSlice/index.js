@@ -58,7 +58,8 @@ const initialState = {
     product: [],
     lang: localStorage.getItem('lang') ? localStorage.getItem('lang') : localStorage.setItem('lang', 'ru'),
     isAuth: '',
-    loading: false
+    loading: false,
+    itemLoading: false
 }
 
 
@@ -93,6 +94,15 @@ const productsSlice = createSlice({
             })
             .addCase(getCategory.rejected, (state, action) => {
                 state.loading = false;
+            })
+            .addCase(getProducts.pending, (state, action) => {
+                state.itemLoading = true
+            })
+            .addCase(getProducts.fulfilled, (state, action) => {
+                state.itemLoading = false
+            })
+            .addCase(getProducts.rejected, (state, action) => {
+                state.itemLoading = false;
             })
     }
 })

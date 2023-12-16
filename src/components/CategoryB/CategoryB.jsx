@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 export default function CategoryB({ products }) {
   const { type } = useParams();
   const lang = localStorage.getItem("lang");
-  const { category } = useSelector((state) => state.productsSlice);
-  
+  const { category, itemLoadind } = useSelector((state) => state.productsSlice);
+
   return (
     <div className="categoryb">
-      <h2 style={{marginBottom: '20px'}}>
+      <h2 style={{ marginBottom: "20px" }}>
         {
           category
             ?.filter((item) => item.id == type)[0]
@@ -29,8 +29,9 @@ export default function CategoryB({ products }) {
                 <div className="category-title">
                   <h2>
                     {
-                      pr?.translations.filter((langg) => langg.locale == lang)[0]
-                        ?.name
+                      pr?.translations.filter(
+                        (langg) => langg.locale == lang
+                      )[0]?.name
                     }
                   </h2>
                   <span className="price">
@@ -40,8 +41,9 @@ export default function CategoryB({ products }) {
                 <div className="category-body">
                   <p>
                     {
-                      pr?.translations.filter((langg) => langg.locale == lang)[0]
-                        ?.description
+                      pr?.translations.filter(
+                        (langg) => langg.locale == lang
+                      )[0]?.description
                     }
                   </p>
                 </div>

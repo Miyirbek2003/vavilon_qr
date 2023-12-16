@@ -84,7 +84,7 @@
     display: flex;
     flex-direction: column;
     align-content: space-between;
-    gap: 10px;
+    gap: 20px;
 }
 
 .feed .container {
@@ -208,5 +208,15 @@
 @keyframes fill {
     100% {
         box-shadow: inset 0px 0px 0px 30px #4bb71b;
+    }
+}
+
+@media screen and (min-width:1100px) {
+
+    .form-inner {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        gap: 10px;
     }
 }

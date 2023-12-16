@@ -6,10 +6,11 @@ import { getProducts } from "../../store/productsSlice";
 import React from "react";
 import { AiOutlineArrowUp, AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
+import ProductLoader from "../../components/Loader/ProductLoader";
 export default function Category() {
   const dispatch = useDispatch();
   const { type } = useParams();
-  const { products } = useSelector((state) => state.productsSlice);
+  const { products, itemLoading } = useSelector((state) => state.productsSlice);
   React.useEffect(() => {
     dispatch(getProducts());
   }, []);
@@ -24,7 +25,18 @@ export default function Category() {
     <section className="cat-sc">
       <div className="container">
         <SectionHeader />
-        <CategoryB products={products} />
+
+        {itemLoading ? (
+          <div style={{ marginTop: "25px" }}>
+            {Array(4)
+              .fill()
+              .map(() => (
+                <ProductLoader key={Math.random()} />
+              ))}
+          </div>
+        ) : (
+          <CategoryB products={products} />
+        )}
         {type && (
           <div className="scrollTop back">
             <button

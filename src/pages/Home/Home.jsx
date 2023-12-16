@@ -5,6 +5,7 @@ import { getCategory } from "../../store/productsSlice";
 import "./home.css";
 import React from "react";
 import Loader from "../../components/Loader/Loader";
+import ItemLoader from "../../components/Loader/ItemLoader";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -12,15 +13,25 @@ export default function Home() {
   React.useEffect(() => {
     dispatch(getCategory());
   }, []);
-  
-  if (loading) {
-    return <Loader />;
-  }
+
+  // if (loading) {
+  //   return <Loader />;
+  // }
   return (
     <section className="main-home">
       <div className="container">
         <SectionHeader />
-        <HomeB category={category} />
+        {loading ? (
+          <div style={{ marginTop: "25px" }}>
+            {Array(4)
+              .fill()
+              .map(() => (
+                <ItemLoader key={Math.random()} />
+              ))}
+          </div>
+        ) : (
+          <HomeB category={category} />
+        )}
       </div>
     </section>
   );

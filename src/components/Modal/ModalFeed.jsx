@@ -7,8 +7,19 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
   const [selected2, setSelected2] = React.useState("");
   const [selected3, setSelected3] = React.useState("");
   return (
-    <div className="modal feed">
-      <div className="modal-back">
+    <div
+      className="modal feed"
+      onClick={(e) => {
+        e.stopPropagation();
+        setFeedModalOpen(false);
+      }}
+    >
+      <div
+        className="modal-back"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <span className="exit" onClick={() => setFeedModalOpen(false)}>
           &times;
         </span>
