@@ -190,7 +190,7 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
               </div>
               <div className="form-item">
                 <div className="form-title">
-                  <p>Выберите 3. Понравились ли Вам блюда ?</p>
+                  <p>3. Понравились ли Вам блюда ?</p>
                   <div
                     className="drop-down"
                     onClick={(e) => {
