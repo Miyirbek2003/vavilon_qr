@@ -4,7 +4,7 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import { getCategory } from "../../store/productsSlice";
 import "./home.css";
 import React from "react";
-import Loader from "../../components/Loader/Loader";
+
 import ItemLoader from "../../components/Loader/ItemLoader";
 
 export default function Home() {

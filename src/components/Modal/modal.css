@@ -220,3 +220,22 @@
         gap: 10px;
     }
 }
+
+
+.form-title {
+    position: relative;
+}
+
+.error1,
+.error2,
+.error3,
+.error4 {
+    position: absolute;
+    color: crimson;
+    bottom: -22px;
+    display: none;
+}
+
+.error4{
+    bottom: -15px !important;
+}

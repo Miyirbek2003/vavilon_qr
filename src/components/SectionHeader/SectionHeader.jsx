@@ -4,15 +4,11 @@ import check from "../../assets/check.svg";
 import wifi from "../../assets/wifi.svg";
 import phone from "../../assets/phone.svg";
 import map from "../../assets/map.svg";
-import { checkAuth } from "../../store/productsSlice";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+
 import Modal from "../Modal/Modal";
 import React from "react";
 import ModalFeed from "../Modal/ModalFeed";
 export default function SectionHeader() {
-  const { isAuth, lang } = useSelector((state) => state.productsSlice);
-  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = React.useState(false);
   const [feedModalOpen, setFeedModalOpen] = React.useState(false);
   if (modalOpen || feedModalOpen) {
@@ -20,9 +16,6 @@ export default function SectionHeader() {
   } else {
     document.body.style.overflow = "auto";
   }
-  React.useEffect(() => {
-    dispatch(checkAuth());
-  }, []);
   return (
     <div className="section-header">
       {modalOpen && <Modal />}

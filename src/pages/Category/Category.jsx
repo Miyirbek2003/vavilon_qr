@@ -20,6 +20,7 @@ export default function Category() {
       top: 0,
     });
   }, []);
+  
   const navigate = useNavigate();
   return (
     <section className="cat-sc">

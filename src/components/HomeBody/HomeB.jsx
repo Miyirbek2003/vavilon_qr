@@ -13,7 +13,7 @@ export default function HomeB({ category }) {
         {itemLoading
           ? Array(4)
               .fill()
-              .map(() => <ItemLoader />)
+              .map(() => <ItemLoader key={Math.random()} />)
           : category?.map((cat, index) => (
               <NavLink
                 to={`/category/${cat.id}`}

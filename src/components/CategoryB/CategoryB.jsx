@@ -20,7 +20,7 @@ export default function CategoryB({ products }) {
         {products
           ?.filter((item) => item.category_id == type)
           .sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
-          .map((pr) => (
+          .map((pr, index) => (
             <div key={pr.id} className="category-item">
               <div className="img">
                 <img src={`${pr.img_url}`} alt="" />
@@ -35,16 +35,14 @@ export default function CategoryB({ products }) {
                     }
                   </h2>
                   <span className="price">
-                    {pr.price} <span>{lang == "ru" ? "сум" : "sum"}</span>
+                    {pr.price.toLocaleString()} <span>{lang == "ru" ? "сум" : "sum"}</span>
                   </span>
                 </div>
                 <div className="category-body">
                   <p>
-                    {
-                      pr?.translations.filter(
-                        (langg) => langg.locale == lang
-                      )[0]?.description
-                    }
+                    {pr?.translations
+                      .filter((langg) => langg.locale == lang)[0]
+                      ?.description.split(" ").join(' * ')}
                   </p>
                 </div>
               </div>

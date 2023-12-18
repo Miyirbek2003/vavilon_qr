@@ -5,32 +5,23 @@ import Home from "./pages/Home/Home";
 import Layout from "./pages/Layout";
 import Order from "./pages/Order/Order";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAuth, getCategory } from "./store/productsSlice";
+import { getCategory } from "./store/productsSlice";
 import Loader from "./components/Loader/Loader";
+import Page404 from "./pages/404/Page404";
 
 export default function App() {
   const navigate = useNavigate();
   const client = window.location.href;
   const dispatch = useDispatch();
-  if (client.includes("scan/")) {
-    sessionStorage.setItem(
-      "client",
-      client.slice(client.indexOf("scan/") + 5, client.length)
-    );
-  }
-  React.useEffect(() => {
-    dispatch(checkAuth());
-    
-    navigate("/");
-  }, []);
-  
+ 
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/category/:type" element={<Category />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="*" element={<Home />} />
+        {/* <Route path="/order" element={<Order />} /> */}
+        <Route path="*" element={<Page404 />} />
       </Route>
     </Routes>
   );
