@@ -23,7 +23,7 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
             question_4: coment,
           }
         );
-        
+
         setFeedModalOpen(false),
           setModalOpen(true),
           setTimeout(() => {
@@ -130,10 +130,7 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
               </div>
               <div className="form-item">
                 <div className="form-title">
-                  <p>
-                    1. Было ли приветствие официанта и познакомил ли он/она
-                    себя?
-                  </p>
+                  <p>2. Понравилось ли обслуживание официанта?</p>
                   <div
                     className="drop-down"
                     onClick={() => {
@@ -193,10 +190,7 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
               </div>
               <div className="form-item">
                 <div className="form-title">
-                  <p>
-                    1. Было ли приветствие официанта и познакомил ли он/она
-                    себя?
-                  </p>
+                  <p>Выберите 3. Понравились ли Вам блюда ?</p>
                   <div
                     className="drop-down"
                     onClick={(e) => {
@@ -257,10 +251,7 @@ export default function ModalFeed({ setFeedModalOpen, setModalOpen }) {
               </div>
               <div className="form-item">
                 <div className="form-title">
-                  <p>
-                    1. Было ли приветствие официанта и познакомил ли он/она
-                    себя?
-                  </p>
+                  <p>4. Ваше предложения и жалобы</p>
                   <textarea
                     name="comment"
                     placeholder="Объяснение"
