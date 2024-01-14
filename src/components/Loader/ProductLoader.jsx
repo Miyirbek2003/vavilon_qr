@@ -7,8 +7,8 @@ const ProductLoader = (props) => (
     width={353}
     height={187}
     viewBox="0 0 353 187"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
+    backgroundColor="#424242"
+    foregroundColor="#2b2b2b"
     {...props}
   >
     <rect x="19" y="30" rx="0" ry="0" width="0" height="1" />

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategory } from "./store/productsSlice";
 import Loader from "./components/Loader/Loader";
 import Page404 from "./pages/404/Page404";
+import About from "./pages/About/About";
 
 export default function App() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/category/:type" element={<Category />} />
         {/* <Route path="/order" element={<Order />} /> */}
         <Route path="*" element={<Page404 />} />

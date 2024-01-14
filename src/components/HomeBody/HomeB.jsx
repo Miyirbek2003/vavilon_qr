@@ -4,11 +4,30 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import ItemLoader from "../Loader/ItemLoader";
+import logo2 from "../../assets/logo2.png";
+
 export default function HomeB({ category }) {
   const { id } = useParams();
   const { itemLoading } = useSelector((state) => state.productsSlice);
+
   return (
     <section className="homeb">
+      <NavLink
+        style={{
+          marginTop: "25px",
+        }}
+        onClick={() => {
+          localStorage.setItem("scrollPosition", window.scrollY);
+        }}
+        to={`/about`}
+        className="category"
+      >
+        <div className="img">
+          <img src={logo2} alt="" />
+        </div>
+
+        <span>Vavilon Restaurant</span>
+      </NavLink>
       <div className="home-body-inner">
         {itemLoading
           ? Array(4)
@@ -16,12 +35,23 @@ export default function HomeB({ category }) {
               .map(() => <ItemLoader key={Math.random()} />)
           : category?.map((cat, index) => (
               <NavLink
-                to={`/category/${cat.id}`}
+                onClick={() => {
+                  localStorage.setItem("scrollPosition", window.scrollY);
+                }}
+                to={ `/category/${cat.id}`}
                 key={cat.id}
                 className="category"
               >
                 <div className="img">
-                  <img src={`${cat.img_url}`} alt="" />
+                  <img
+                    style={
+                     { objectFit:  cat.translations.filter(
+                      (lang) => lang.locale == localStorage.getItem("lang")
+                    )[0].name == "Бой пасуды" ? "contain" : "cover" , backgroundColor:'black'}
+                    }
+                    src={`${cat.img_url}`}
+                    alt=""
+                  />
                 </div>
 
                 <span>

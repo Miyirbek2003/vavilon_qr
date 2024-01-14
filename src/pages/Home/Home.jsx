@@ -10,8 +10,16 @@ import ItemLoader from "../../components/Loader/ItemLoader";
 export default function Home() {
   const dispatch = useDispatch();
   const { category, loading } = useSelector((state) => state.productsSlice);
+
   React.useEffect(() => {
-    dispatch(getCategory());
+    if (category.length == 0) {
+      dispatch(getCategory());
+    }
+    window.scroll({
+      top: localStorage.getItem("scrollPosition"),
+      left: 0,
+      behavior: "auto",
+    });
   }, []);
 
   // if (loading) {

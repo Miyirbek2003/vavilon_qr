@@ -1,7 +1,7 @@
 .category-card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .category-item {
@@ -15,7 +15,7 @@
 }
 
 .categoryb>h2 {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 25px;
     line-height: 24px;
     margin-bottom: 10px;
@@ -23,7 +23,7 @@
 
 .price {
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 30px;
     color: white;
     white-space: nowrap;
@@ -36,6 +36,9 @@
 .category-text {
     display: flex;
     flex-direction: column;
+    position: relative;
+    margin: 5px 0;
+
 }
 
 .category-title {
@@ -46,10 +49,10 @@
 }
 
 .category-title h2 {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 22px;
     line-height: 24px;
-    text-transform: capitalize;
+    
 }
 
 .category-title p {
@@ -61,7 +64,7 @@
 .category-body {
     font-weight: 400;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 15px;
 }
 
 .category-body p {
@@ -74,7 +77,6 @@
     overflow: hidden;
     position: relative;
     border-radius: 20px;
-    margin-bottom: 7px;
     display: flex;
     align-items: center;
     justify-content: center;

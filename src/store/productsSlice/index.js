@@ -3,9 +3,11 @@ import axios from 'axios'
 
 
 
-export const getProducts = createAsyncThunk('productsSlice/getProducts', async (_, { dispatch }) => {
+export const getProducts = createAsyncThunk('productsSlice/getProducts', async (type, { dispatch }) => {
     const response = await axios.get('https://admin-vavilon.webclub.uz/api/products', {
-
+        params: {
+            category_id: type
+        }
     })
     dispatch(setProducts(response.data.data))
 })
